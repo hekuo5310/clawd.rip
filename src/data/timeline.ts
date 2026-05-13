@@ -45,6 +45,7 @@ const icons = {
   tomsHardware: "/source-icons/favicons/tomsHardware.avif",
   ventureBeat: "/source-icons/favicons/ventureBeat.avif",
   wired: "/source-icons/favicons/wired.ico",
+  x: "/source-icons/x.svg",
 } as const;
 
 const source = {
@@ -101,6 +102,16 @@ const source = {
   anthropicTransparency: {
     title: "Anthropic",
     url: "https://www.anthropic.com/transparency/system-trust-reporting",
+    icon: icons.anthropic,
+  },
+  claudeDevsAgentSdkCreditThread: {
+    title: "ClaudeDevs",
+    url: "https://x.com/ClaudeDevs/status/2054610152817619388",
+    icon: icons.x,
+  },
+  claudeHelpAgentSdkPlanCredit: {
+    title: "Claude Help Center",
+    url: "https://support.claude.com/en/articles/15036540-use-the-claude-agent-sdk-with-your-claude-plan",
     icon: icons.anthropic,
   },
   apFairUseRuling: {
@@ -259,6 +270,11 @@ const source = {
     url: "https://www.reuters.com/technology/anthropic-seeks-court-stay-pentagon-supply-chain-risk-designation-2026-03-12/",
     icon: icons.reuters,
   },
+  redditAgentSdkClarify: {
+    title: "Reddit",
+    url: "https://www.reddit.com/r/ClaudeAI/comments/1qofa67/anthropic_please_clarify_acceptable_use_of_the/",
+    icon: icons.reddit,
+  },
   redditHermesBillingBug: {
     title: "Reddit",
     url: "https://www.reddit.com/r/ClaudeAI/comments/1svdm1w/psa_the_string_hermesmd_in_your_git_commit/",
@@ -370,7 +386,6 @@ const source = {
     url: "https://www.theregister.com/2026/04/22/anthropic_removes_claude_code_pro/",
     icon: icons.theRegister,
   },
-
   tomsGuideMarchOutage: {
     title: "Tom's Guide",
     url: "https://www.tomsguide.com/ai/claude-crashes-under-unprecedented-demand-service-restored-as-surge-shows-explosive-growth",
@@ -760,6 +775,19 @@ export const timelineEvents: TimelineEvent[] = [
       "Anthropic's status page said Claude Code v2.1.120 crashed when resuming sessions with --resume or --continue, forcing an automatic rollback to v2.1.119. Right after the postmortem, the product served another tiny reliability punchline.",
     sources: [source.anthropicStatusApr25],
     category: "Reliability",
+  },
+  {
+    date: "2026-05-13",
+    period: "May 13, 2026",
+    title: "Claude's 'Free Credits' Come With a 25x Price Increase",
+    summary:
+      "Anthropic moved Agent SDK, `claude -p`, Claude Code GitHub Actions, and third-party Agent SDK apps onto a separate monthly credit bucket. Subscription limits technically stayed the same; programmatic Claude usage got pushed into API-priced credits that run out fast or turn into a separate bill.",
+    sources: [
+      source.claudeDevsAgentSdkCreditThread,
+      source.claudeHelpAgentSdkPlanCredit,
+      source.redditAgentSdkClarify,
+    ],
+    category: "Policy",
   },
 ];
 
